@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class AnswerButton extends StatelessWidget {
   final String text;
@@ -8,15 +8,26 @@ class AnswerButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromARGB(255, 33, 1, 95),
-          foregroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(40),
-          ),
-        ),
+    return Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: CupertinoButton(
+        padding: const EdgeInsets.all(16),
+        color: Color.fromARGB(255, 33, 1, 95),
         onPressed: onPressed,
-        child: Text(text,textAlign: TextAlign.center,));
+        alignment: Alignment.centerLeft,
+        child: Text(text,
+            style: const TextStyle(color: CupertinoColors.white)),
+      ),
+    );
+    // return ElevatedButton(
+    //     style: ElevatedButton.styleFrom(
+    //       backgroundColor: const Color.fromARGB(255, 33, 1, 95),
+    //       foregroundColor: Colors.white,
+    //       shape: RoundedRectangleBorder(
+    //         borderRadius: BorderRadius.circular(40),
+    //       ),
+    //     ),
+    //     onPressed: onPressed,
+    //     child: Text(text,textAlign: TextAlign.center,));
   }
 }

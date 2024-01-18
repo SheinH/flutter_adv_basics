@@ -1,6 +1,4 @@
-import 'package:adv_basics/quiz.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class StartingScreen extends StatelessWidget {
 
@@ -16,17 +14,30 @@ class StartingScreen extends StatelessWidget {
             width: 300, color: const Color.fromARGB(150, 255, 255, 255)),
         const SizedBox(height: 20),
         const Text("Learn Flutter the fun way!",
-            style: TextStyle(color: Colors.white, fontSize: 24)),
+            style: TextStyle(color: CupertinoColors.white, fontSize: 24)),
         const SizedBox(height: 20),
-        OutlinedButton.icon(
+        CupertinoButton(
+          color: CupertinoColors.white.withAlpha(100),
           onPressed: startQuiz,
-          style: OutlinedButton.styleFrom(
-            foregroundColor: Colors.white,
-          ),
-          icon: const Icon(CupertinoIcons.arrow_right),
-          label:
-              const Text('Start Quiz', style: TextStyle(color: Colors.white)),
-        )
+          child: const Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(CupertinoIcons.arrow_right),
+              SizedBox(width: 10),
+              Text('Start Quiz'),
+            ],
+          )
+          // child: const Text('Start Quiz'),
+        ),
+        // OutlinedButton.icon(
+        //   onPressed: startQuiz,
+        //   style: OutlinedButton.styleFrom(
+        //     foregroundColor: Colors.white,
+        //   ),
+        //   icon: const Icon(CupertinoIcons.arrow_right),
+        //   label:
+        //       const Text('Start Quiz', style: TextStyle(color: Colors.white)),
+        // )
       ],
     );
   }
